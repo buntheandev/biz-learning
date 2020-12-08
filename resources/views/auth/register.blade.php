@@ -34,10 +34,7 @@
                                 <div class="card-body">
                                     <form method="POST" action="{{ route('register') }}">
                                         @csrf
-                                        <div class="form-head">
-                                            <a href="index.html" class="logo"><img src="assets/images/logo.svg" class="img-fluid" alt="logo"></a>
-                                        </div>
-                                        <h4 class="text-primary my-4">Sign Up !</h4>
+                                        <h2 class="text-primary my-4">Sign Up !</h2>
                                         <div class="form-group">
                                             <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" placeholder="Enter Your Name" autofocus>
 

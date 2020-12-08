@@ -75,6 +75,17 @@
                                     @enderror
                                 </div>
                             </div>
+                            <div class="form-group row">
+                                <label class="col-lg-3 col-form-label" for="price">Cost of Good <span class="text-danger">*</span></label>
+                                <div class="col-lg-6">
+                                   <input type="number" class="form-control @error('cost_of_good') is-invalid @enderror" id="cost_of_good" name="cost_of_good" placeholder="$ 0.00" style="text-align: right;">
+                                    @error('cost_of_good')
+                                           <span class="text-danger">
+                                                {{ $message }}
+                                           </span>
+                                    @enderror
+                                </div>
+                            </div>
                              <div class="form-group row">
                                 <label class="col-lg-3 col-form-label" for="quantity">Product quantity <span class="text-danger">*</span></label>
                                 <div class="col-lg-6">

@@ -36,10 +36,7 @@
             <div class="sidebar">
                 <!-- Start Logobar -->
                 <div class="logobar">
-                    <a href="{{route('dashboard')}}" class="logo logo-large">
-                        <img src="#" class="img-fluid" alt="logo">
-                    <span></span>
-                    </a>
+                  <h3 style="color: #0058ea">Biz Learning</h3>
                 </div>
                 <!-- End Logobar -->
                 <!-- Start Navigationbar -->
@@ -93,7 +90,7 @@
                         </li>
 
                          <li >
-                            <a href="javaScript:void();">
+                            <a href="{{ route('report') }}">
                                 <i class="fa fa-pie-chart"></i>
                                 <span>Report</span>
                             </a>
@@ -119,8 +116,7 @@
                 <div class="row align-items-center">
                     <div class="col-md-12">
                         <div class="mobile-logobar">
-                            <a href="index.html" class="mobile-logo">
-                            <img src="{{asset('backend/assets/images/logo.svg')}}" class="img-fluid" alt="logo"></a>
+                            <h3 style="color: #0058ea">Biz Learning</h3>
                         </div>
                         <div class="mobile-togglebar">
                             <ul class="list-inline mb-0">
@@ -196,7 +192,7 @@
                                                         </li>
 
                                                         <li class="media dropdown-item">
-                                                        <a href="{{URL::to('logout')}}" class="profile-icon"><img src="{{asset('backend/assets/images/svg-icon/logout.svg')}}" class="img-fluid" alt="logout">Logout</a>
+                                                        <a href="{{ route('logout') }}" class="profile-icon"><img src="{{asset('backend/assets/images/svg-icon/logout.svg')}}" class="img-fluid" alt="logout">Logout</a>
                                                         </li>
                                                     </ul>
                                                 </div>
