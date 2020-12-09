@@ -16,7 +16,7 @@
 
                             <div class="product-bar m-b-30">
                                 <div class="product-head">
-                                    <img src="{{ asset($item->image) }}" class="img-fluid" alt="product">
+                                    <img src="{{ asset($item->image) }}" class="img-fluid product-order" alt="product">
                                 </div>
                                 <div class="product-body py-3">
                                     <div class="row align-items-center">
