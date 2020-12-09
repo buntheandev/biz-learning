@@ -36,8 +36,7 @@
                                    <form method="POST" action="{{ route('login') }}">
                                         @csrf
                                         <div class="form-head">
-                                            <a href="index.html" class="logo">
-                                            <img src="#" class="img-fluid" alt="logo"></a>
+                                            <span style="font-size: 25px; font-weight: bold; text-transform: uppercase;color: #0d70d3e6;">Biz Learning</span>
                                         </div>
                                         <h4 class="text-primary my-4" style="text-transform: uppercase;font-weight: bold;">Log in !</h4>
                                         <div class="form-group">

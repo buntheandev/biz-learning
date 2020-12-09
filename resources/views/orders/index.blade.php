@@ -12,11 +12,11 @@
                 <div class="row">
                     <!-- Start col -->
                    @foreach ($products as $item)
-                        <div class="col-lg-2 col-xl-2">
+                   <div class="col-lg-2 col-xl-2">
+
                             <div class="product-bar m-b-30">
                                 <div class="product-head">
-                                    <a href="#">
-                                        <img src="{{ asset($item->image) }}" class="img-fluid" alt="product"></a>
+                                    <img src="{{ asset($item->image) }}" class="img-fluid" alt="product">
                                 </div>
                                 <div class="product-body py-3">
                                     <div class="row align-items-center">
@@ -46,12 +46,17 @@
                                         </div>
                                         <div class="col-6">
                                             <div class="text-right">
-                                                <button type="button" class="btn btn-primary-rgba font-18"><i class="fa fa-cart-plus"></i></button>
+                                                @if ($item->quantity >=1 )
+                                                    <a href="{{ route('order_submit', $item->id) }}" class="btn btn-primary-rgba font-18"><i class="fa fa-cart-plus"></i></a>
+                                                @else
+                                                    <a href="#" class="btn btn-primary-rgba font-18" onclick="confirm('Product stock out you can not order! please wait later ')"><i class="fa fa-cart-plus"></i></a>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        </a>
                         </div>
                    @endforeach
                 </div>

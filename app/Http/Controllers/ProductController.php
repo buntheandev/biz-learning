@@ -22,26 +22,35 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
+        // Validate before insert into database
         $this->validate($request, [
             'name'          => 'required|min:3',
             'price'         => 'required',
             'quantity'      => 'required',
             'description'   => 'required|min:2',
+            'cost_of_good'  => 'required',
         ]);
+        //get categories from input
         $categories = $request->categories;
 
+        // get product information from input
         $data = array(
             'user_id'       => $request->user_id,
             'name'          => $request->name,
             'price'         => $request->price,
             'quantity'      => $request->quantity,
             'description'   => $request->description,
+            'cost_of_good'  => $request->cost_of_good,
         );
-        if ($request->image) {
-            $data['image'] = $request->file('image')->store('uploads/products', 'custom');
-        }
-        $product = Product::create($data);
 
+        // Checking if has image upload
+        if ($request->image) {
+            $data['image']      = $request->file('image')->store('uploads/products', 'custom');
+        }
+
+        // insert product information into database
+        $product = Product::create($data);
+        // insert categories into databsae
         $product->categories()->attach($categories);
 
         return redirect()->route('product.create')->with('success', 'successful');
@@ -57,16 +66,13 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         $categories = $request->categories;
-        // $name           = $request->name;
-        // $price          = $request->price;
-        // $quantity       = $request->quantity;
-        // $description    = $request->description;
 
         $data = array(
             'name'          => $request->name,
             'price'         => $request->price,
             'quantity'      => $request->quantity,
             'description'   => $request->description,
+            'cost_of_good'  => $request->cost_of_good,
         );
         if ($request->image) {
             $data['image'] = $request->file('image')->store('uploads/products', 'custom');
@@ -74,10 +80,6 @@ class ProductController extends Controller
 
         $product = Product::find($id);
 
-        // $product->name          = $name;
-        // $product->price         = $price;
-        // $product->quantity      = $quantity;
-        // $product->description   = $description;
         $product->save();
         $product->update($data);
         $product->categories()->sync( $categories );
