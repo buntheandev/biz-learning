@@ -7,3 +7,8 @@
 .form-border{
     border: 1px solid #b0b0b0;
 }
+img.product-order{
+    object-fit: cover;
+    height: 145px;
+    width: 100%;
+}
