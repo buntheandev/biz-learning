@@ -11,14 +11,14 @@ class ReportController extends Controller
     public function index()
     {
         //Report by weekly
-        // $last_week             = date('Y-m-d', strtotime('-7 days'));
+        // $last_week             = date('Y-m-d', strtotime('-7 days')); I'm try this but it's not working I use Carbon instead
         $new_orders            = Order::where('created_at', '>=', Carbon::now()->isWeekend())->count();
         $sale_orders           = Order::where('created_at', '>=', Carbon::now()->isWeekend())->sum('total');
         $cost_of_goods         = Order::where('created_at', '>=', Carbon::now()->isWeekend())->sum('cost_of_good');
         $profits               = $sale_orders - $cost_of_goods;
 
         // Report by daily
-        // $daily                = date('Y-m-d', strtotime('-1 days'));
+        // $daily                = date('Y-m-d', strtotime('-1 days')); I'm try this but it's not working I use Carbon instead
         $daily_new_orders     = Order::where('created_at', '>=', Carbon::now()->today())->count();
         $daily_sale_orders    = Order::where('created_at', '>=', Carbon::now()->today())->sum('total');
         $daily_cost_of_goods  = Order::where('created_at', '>=', Carbon::now()->today())->sum('cost_of_good');
