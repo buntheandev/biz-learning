@@ -10,7 +10,7 @@ class OrderController extends Controller
 {
     public function index()
     {
-        $products = Product::orderBy('id', 'desc')->all();
+        $products = Product::all();
         return view('orders.index', compact('products'));
     }
 
