@@ -10,7 +10,7 @@ class OrderController extends Controller
 {
     public function index()
     {
-        $products = Product::all();
+        $products = Product::orderBy('id', 'desc')->all();
         return view('orders.index', compact('products'));
     }
 
@@ -20,6 +20,7 @@ class OrderController extends Controller
         $orders = Order::Join('users', 'orders.user_id', 'users.id')
             ->join('products', 'orders.product_id', 'products.id')
             ->select('orders.*', 'users.name', 'products.image')
+            ->orderBy('id', 'desc')
             ->get();
 
         return view('orders.listing', compact('orders'));
