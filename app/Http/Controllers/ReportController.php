@@ -12,9 +12,9 @@ class ReportController extends Controller
     {
         //Report by weekly
         // $last_week             = date('Y-m-d', strtotime('-7 days')); I'm try this but it's not working I use Carbon instead
-        $new_orders            = Order::where('created_at', '>=', Carbon::now()->isWeekend())->count();
-        $sale_orders           = Order::where('created_at', '>=', Carbon::now()->isWeekend())->sum('total');
-        $cost_of_goods         = Order::where('created_at', '>=', Carbon::now()->isWeekend())->sum('cost_of_good');
+        $new_orders            = Order::where('created_at', '>=', Carbon::now()->isWeekend(7))->count();
+        $sale_orders           = Order::where('created_at', '>=', Carbon::now()->isWeekend(7))->sum('total');
+        $cost_of_goods         = Order::where('created_at', '>=', Carbon::now()->isWeekend(7))->sum('cost_of_good');
         $profits               = $sale_orders - $cost_of_goods;
 
         // Report by daily
