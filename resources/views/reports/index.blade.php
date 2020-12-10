@@ -35,7 +35,7 @@
     </div>
 </div>
 
-
+<!--- Report weekly -->
 <div class="row">
     <div class="col-lg-3 col-xl-3">
         <div class="card m-b-30">
@@ -95,6 +95,7 @@
 
 </div>
 
+<!-- Report tomorrow -->
 <div class="row">
     <div class="col-lg-3 col-xl-3">
         <div class="card m-b-30">
@@ -102,7 +103,66 @@
                 <div class="media">
                     <span class="align-self-center mr-3 action-icon badge badge-primary-inverse"><i class="fa fa-opencart"></i></span>
                     <div class="media-body">
-                        <p class="mb-0">Order Daily</p>
+                        <p class="mb-0">Order Yesterday</p>
+                        <h5 class="mb-0">{{ $tomorrow_new_orders }}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <div class="col-lg-3 col-xl-3">
+        <div class="card m-b-30">
+            <div class="card-body">
+                <div class="media">
+                    <span class="align-self-center mr-3 action-icon badge badge-danger-inverse"><i class="fa fa-dollar"></i></span>
+                    <div class="media-body">
+                        <p class="mb-0">Sale Yesterday</p>
+                        <h5 class="mb-0">{{ number_format($tomorrow_sale_orders, 2 ) }}$</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <div class="col-lg-3 col-xl-3">
+        <div class="card m-b-30">
+            <div class="card-body">
+                <div class="media">
+                    <span class="align-self-center mr-3 action-icon badge badge-warning-inverse"><i class="fa fa-dollar"></i></span>
+                    <div class="media-body">
+                        <p class="mb-0">Total Cost of Goods Yesterday</p>
+                        <h5 class="mb-0">{{ number_format($tomorrow_cost_of_goods, 2) }}$</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <div class="col-lg-3 col-xl-3">
+        <div class="card m-b-30">
+            <div class="card-body">
+                <div class="media">
+                    <span class="align-self-center mr-3 action-icon badge badge-success-inverse"><i class="fa fa-dollar"></i></span>
+                    <div class="media-body">
+                        <p class="mb-0">Gross profits Yesterday</p>
+                        <h5 class="mb-0">{{ number_format($tomorrow_profits, 2) }}$</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-lg-3 col-xl-3">
+        <div class="card m-b-30">
+            <div class="card-body">
+                <div class="media">
+                    <span class="align-self-center mr-3 action-icon badge badge-primary-inverse"><i class="fa fa-opencart"></i></span>
+                    <div class="media-body">
+                        <p class="mb-0">Order Today</p>
                         <h5 class="mb-0">{{ $daily_new_orders }}</h5>
                     </div>
                 </div>
@@ -116,7 +176,7 @@
                 <div class="media">
                     <span class="align-self-center mr-3 action-icon badge badge-danger-inverse"><i class="fa fa-dollar"></i></span>
                     <div class="media-body">
-                        <p class="mb-0">Sale Daily</p>
+                        <p class="mb-0">Sale Today</p>
                         <h5 class="mb-0">{{ number_format($daily_sale_orders, 2 ) }}$</h5>
                     </div>
                 </div>
@@ -130,7 +190,7 @@
                 <div class="media">
                     <span class="align-self-center mr-3 action-icon badge badge-warning-inverse"><i class="fa fa-dollar"></i></span>
                     <div class="media-body">
-                        <p class="mb-0">Total Cost of Goods Daily</p>
+                        <p class="mb-0">Total Cost of Goods Today</p>
                         <h5 class="mb-0">{{ number_format($daily_cost_of_goods, 2) }}$</h5>
                     </div>
                 </div>
@@ -144,7 +204,7 @@
                 <div class="media">
                     <span class="align-self-center mr-3 action-icon badge badge-success-inverse"><i class="fa fa-dollar"></i></span>
                     <div class="media-body">
-                        <p class="mb-0">Gross profits Daily</p>
+                        <p class="mb-0">Gross profits Today</p>
                         <h5 class="mb-0">{{ number_format($daily_profits, 2) }}$</h5>
                     </div>
                 </div>
