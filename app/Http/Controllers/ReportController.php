@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Order;
 use App\Product;
-use Illuminate\Http\Request;
 class ReportController extends Controller
 {
-    public function index()
+     public function index()
     {
         //Report by weekly
         $last_week             = date('Y-m-d', strtotime('-7 days'));
@@ -46,5 +46,4 @@ class ReportController extends Controller
             'stock_value'
         ));
     }
-
 }

@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
     <!-- Fevicon -->
-    <link rel="shortcut icon" href="">
+   <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon-32x32.png') }}">
     <!-- Start css -->
     <!-- Switchery css -->
     <link href="{{asset('backend/assets/plugins/switchery/switchery.min.css')}}" rel="stylesheet">

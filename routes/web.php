@@ -45,6 +45,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('list_orders',           [OrderController::class, 'order_listing'])->name('order.listing');
 
     // Report
-    Route::get('report',                [ReportController::class, 'index'])->name('report');
+    // Route::get('report',                [ReportController::class, 'index'])->name('report');
+    Route::get('report', 'ReportController@index')->name('report');
 });
 
