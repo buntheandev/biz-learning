@@ -18,9 +18,9 @@ class ReportController extends Controller
         $profits               = $sale_orders - $cost_of_goods;
 
         // $daily                = date('Y-m-d', strtotime('-1 days')); I'm try this but it's not working I use Carbon instead
-        $tomorrow_new_orders     = Order::where('created_at', '<=', Carbon::now()->yesterday())->count();
-        $tomorrow_sale_orders    = Order::where('created_at', '<=', Carbon::now()->yesterday())->sum('total');
-        $tomorrow_cost_of_goods  = Order::where('created_at', '<=', Carbon::now()->yesterday())->sum('cost_of_good');
+        $tomorrow_new_orders     = Order::where('created_at', Carbon::now()->yesterday())->count();
+        $tomorrow_sale_orders    = Order::where('created_at', Carbon::now()->yesterday())->sum('total');
+        $tomorrow_cost_of_goods  = Order::where('created_at', Carbon::now()->yesterday())->sum('cost_of_good');
         $tomorrow_profits        = $tomorrow_sale_orders  -  $tomorrow_cost_of_goods;
 
         // $daily                = date('Y-m-d', strtotime('-1 days')); I'm try this but it's not working I use Carbon instead
